@@ -17,14 +17,12 @@ GlobalText({required String text, required Color color, required double fontSize
   );
 }
 
-GlobalText1(text, fontSize, fontWeight, color) {
+GlobalText1({required String text, required Color color, required double fontSize, required FontWeight fontWeight}) {
   return Text(
     text,
     maxLines: 2,
-    textAlign: TextAlign.start,
-    overflow: TextOverflow.ellipsis,
+    textAlign: TextAlign.center,
     style: TextStyle(
-      letterSpacing: 0.2,
       color: color,
       fontSize: fontSize,
       fontWeight: fontWeight,

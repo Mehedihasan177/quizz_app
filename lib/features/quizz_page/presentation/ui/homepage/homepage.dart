@@ -8,13 +8,16 @@ import 'package:quizz_app/features/quizz_page/presentation/ui/question_page/ques
 
 import '../../../../../core/routes/route_name.dart';
 import '../../../../../core/routes/router.dart';
+import '../../controller/question_controller.dart';
+import '../../controller/user_store_get_controller.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
-
+  Homepage({super.key});
+  QuestionController questionController = Get.put(QuestionController());
+  UserCatchController userCatchController = Get.put(UserCatchController());
   @override
   Widget build(BuildContext context) {
-
+    userCatchController.getScore();
     return Scaffold(
       body: Center(
         child: Column(
@@ -27,7 +30,7 @@ class Homepage extends StatelessWidget {
             30.ph,
             GlobalText(text: "Highscore", color: AppColors.black, fontSize: AppSizes.size22, fontWeight: FontWeight.bold),
             20.ph,
-            GlobalText(text: "20 Points", color: AppColors.black, fontSize: AppSizes.size22, fontWeight: FontWeight.bold),
+            Obx(() => GlobalText(text:  "${questionController.totalScore.value != 0 ? questionController.totalScore.value : userCatchController.getScores  } Points", color: AppColors.black, fontSize: AppSizes.size22, fontWeight: FontWeight.bold),),
             40.ph,
             
             ElevatedButton(onPressed: (){

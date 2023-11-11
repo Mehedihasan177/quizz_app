@@ -15,7 +15,6 @@ class QuestionServices {
       final QuizModel quizModel = QuizModel.fromJson(jsonData);
       apiResponse = Response.success(quizModel);
     } catch (error) {
-      print("Error: $error");  // Debug print
       apiResponse = Response.error("Error loading data from file", 500);
     }
     return apiResponse;
