@@ -4,7 +4,7 @@ import 'package:quizz_app/core/utils/consts/app_colors.dart';
 import 'package:quizz_app/core/utils/consts/app_sizes.dart';
 import 'package:quizz_app/core/utils/consts/textstyle.dart';
 import 'package:quizz_app/core/utils/core/extensions/extensions.dart';
-import 'package:quizz_app/features/quizz_page/presentation/ui/question_page/question_page.dart';
+
 
 import '../../../../../core/routes/route_name.dart';
 import '../../../../../core/routes/router.dart';
@@ -32,13 +32,49 @@ class Homepage extends StatelessWidget {
             20.ph,
             Obx(() => GlobalText(text:  "${questionController.totalScore.value != 0 ? questionController.totalScore.value : userCatchController.getScores  } Points", color: AppColors.black, fontSize: AppSizes.size22, fontWeight: FontWeight.bold),),
             40.ph,
-            
             ElevatedButton(onPressed: (){
-              RouteGenerator.pushNamed(context, Routes.questionpage);
-            }, child: const Text("data"))
+              dialogBuilder(context);
+            }, child: const Text("Start Quizz"))
           ],
         ),
       ),
     );
   }
+  Future<void> dialogBuilder(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          // title: const Text('Start Q'),
+          content: const Text(
+            'Want to start the quiz? \nTake a deep breath to start the quiz.',
+          ),
+          contentTextStyle: TextStyle(fontSize: AppSizes.size17, fontWeight: FontWeight.w400, color: Colors.black),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('No'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Yes'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                questionController.count.value = 0;
+                RouteGenerator.pushNamedAndRemoveAll(context, Routes.questionpage);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 }

@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2),(){
-      RouteGenerator.pushNamed(context, Routes.homepage);
+      RouteGenerator.pushNamedAndRemoveAll(context, Routes.homepage);
     });
     super.initState();
   }

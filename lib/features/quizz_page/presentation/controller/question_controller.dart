@@ -55,62 +55,75 @@ class QuestionController extends GetxController {
   }
   void whenCorrectThenTimerTwoSeconds(BuildContext context) {
     secondsRemaining.value = 2;
-    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      timer?.cancel();
-      if (secondsRemaining.value == 0) {
-        isClickedOnOptions.value = false;
-        count.value++;
-        selectedAnswer = null;
-        if (count.value > questionLength.value - 1) {
-          timer.cancel();
-          count.value = 0;
-          RouteGenerator.pushNamed(context, Routes.homepage);
-        }
-      } else {
-        secondsRemaining.value--;
-      }
-    });
-  }
-
-  void showNextQuestion() {
-    questionLength.value = quizModelData.value?.questions?.length ?? 0;
     if (count.value < questionLength.value - 1) {
       Future.delayed(const Duration(seconds: 1), () {
         if (secondsRemaining.value == 0) {
           isClickedOnOptions.value = false;
           timerIsActive.value = true;
-
           if (timerIsActive.value) {
             if (count.value < questionLength.value - 1) {
               count.value++;
             }
           }
-
           selectedAnswer = null;
-
           if (count.value <= questionLength.value - 1) {
             secondsRemaining.value = 6;
-
-            showNextQuestion();
           } else {
             timerIsActive.value = false;
           }
         } else {
           secondsRemaining.value--;
-
-          if (count.value <= questionLength.value - 1) {
-            showNextQuestion();
-          }
         }
       });
     } else {
-      RouteGenerator.pushNamed(navigatorKey.currentContext!, Routes.homepage);
+      RouteGenerator.pushNamedAndRemoveAll(navigatorKey.currentContext!, Routes.homepage);
 
     }
+  }
+
+  void showNextQuestion() {
+    questionLength.value = quizModelData.value?.questions?.length ?? 0;
+      if (count.value < questionLength.value - 1) {
+        Future.delayed(const Duration(seconds: 1), () {
+          if (secondsRemaining.value == 0) {
+            isClickedOnOptions.value = false;
+            timerIsActive.value = true;
+
+            if (timerIsActive.value) {
+              if (count.value < questionLength.value - 1) {
+                count.value++;
+              }
+            }
+
+            selectedAnswer = null;
+
+            if (count.value <= questionLength.value - 1) {
+              secondsRemaining.value = 6;
+
+              showNextQuestion();
+            } else {
+              timerIsActive.value = false;
+            }
+          } else {
+            secondsRemaining.value--;
+
+            if (count.value <= questionLength.value - 1) {
+              showNextQuestion();
+            }
+          }
+        });
+      } else {
+        RouteGenerator.pushNamedAndRemoveAll(navigatorKey.currentContext!, Routes.homepage);
+      }
     update(["showNextQuestion"]);
   }
-  
+  @override
+  void onInit() {
+    count.value = 0;
+    super.onInit();
+  }
   void insertQuestionAnswer(){
+    print("count.value ${count.value}");
     texts.value.clear();
      quizModelData.value
         ?.questions?[ count.value]?.answers?.a != null ?  texts.value.add( quizModelData.value

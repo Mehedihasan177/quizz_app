@@ -5,7 +5,7 @@ import 'package:quizz_app/features/quizz_page/presentation/ui/question_page/ques
 import '../../features/splash_screen/splash_screen.dart';
 
 class RouteGenerator {
-  static pushNamed(BuildContext context, String pageName) {
+  static pushNamedAndRemoveAll(BuildContext context, String pageName) {
     return Navigator.pushNamed(context, pageName);
   }
 
@@ -19,12 +19,6 @@ class RouteGenerator {
     return Navigator.of(context).pushNamed(pageName);
   }
 
-  static pushNamedAndRemoveAll(BuildContext context, String pageName,
-      {List arguments = const []}) {
-    return Navigator.pushNamedAndRemoveUntil(
-        context, pageName, (route) => false,
-        arguments: arguments);
-  }
 
   static pushReplacementNamed(BuildContext context, String pageName,
       {List arguments = const []}) {

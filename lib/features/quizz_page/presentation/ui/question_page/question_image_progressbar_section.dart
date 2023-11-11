@@ -66,7 +66,7 @@ class QuestionImageProgressBarSection extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 10),
                     child: GlobalText(
                       text:
-                      "${questionController.quizModelData.value?.questions?[questionController.count.value]?.score} Points",
+                      "${questionController.quizModelData.value?.questions?[questionController.count.value]?.score } Points",
                       color: AppColors.white,
                       fontSize: AppSizes.size18,
                       fontWeight: FontWeight.bold,
