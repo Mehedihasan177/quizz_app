@@ -14,7 +14,7 @@ Integration of CachedNetworkImage for image loading
 Count timer
 Using GetX State management
 
-Dependencies:
+# Dependencies:
 get: ^4.6.6
 get_it: ^7.6.4
 hexcolor: ^3.0.1
@@ -24,7 +24,7 @@ shared_preferences:
 flutter_launcher_icons: ^0.13.1
 
 
-How to Run:
+# How to Run:
 Clone this repository.
 Open the project in Android Studio.
 Build and run the app on an emulator or physical device.
