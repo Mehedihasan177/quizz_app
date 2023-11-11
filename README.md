@@ -15,17 +15,17 @@ error is:
 5. Using GetX State management
 
 # Dependencies:
-get: ^4.6.6
-get_it: ^7.6.4
-hexcolor: ^3.0.1
-cached_network_image: ^3.3.0
-logger: ^2.0.2+1
-shared_preferences:
-flutter_launcher_icons: ^0.13.1
+1. get: ^4.6.6
+2. get_it: ^7.6.4
+3. hexcolor: ^3.0.1
+4. cached_network_image: ^3.3.0
+5. logger: ^2.0.2+1
+6. shared_preferences:
+7. flutter_launcher_icons: ^0.13.1
 
 
 # How to Run:
-Clone this repository.
-Open the project in Android Studio.
-Build and run the app on an emulator or physical device.
+1. Clone this repository.
+2. Open the project in Android Studio.
+3. Build and run the app on an emulator or physical device.
 
