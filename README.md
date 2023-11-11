@@ -7,7 +7,7 @@ error is:
  - 'RenderObject' is from 'package:flutter/src/rendering/object.dart' ('/C:/src/flutter/packages/flutter/lib/src/rendering/object.dart').
 ]
 
-Features:
+# Features:
 Dependency injection using locator
 Clean architecture pattern
 Integration of CachedNetworkImage for image loading
