@@ -22,7 +22,7 @@ class QuestionImageProgressBarSection extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GlobalText(text: "Question: ${questionController.count.value} / ${questionController.questionLength.value - 1}", color: AppColors.black, fontSize: AppSizes.size17, fontWeight: FontWeight.bold),
+                GlobalText(text: "Question: ${(questionController.count.value + 1) > (questionController.questionLength.value - 1) ? questionController.questionLength.value - 1 : questionController.count.value + 1} / ${questionController.questionLength.value - 1}", color: AppColors.black, fontSize: AppSizes.size17, fontWeight: FontWeight.bold),
                 // 50.pw,
                 GlobalText(text: "Score: ${questionController.totalScore.value}", color: AppColors.black, fontSize: AppSizes.size17, fontWeight: FontWeight.bold),
                 Container(
@@ -44,7 +44,7 @@ class QuestionImageProgressBarSection extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: LinearProgressIndicator(
-            value: questionController.secondsRemaining.value / 6,
+            value: questionController.secondsRemaining.value / 10,
             color: Colors.blue,
             backgroundColor: Colors.grey[300],
           ),

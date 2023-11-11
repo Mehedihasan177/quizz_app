@@ -19,7 +19,7 @@ class QuestionController extends GetxController {
   var timerIsActive = false.obs;
   var isClickedOnOptions = false.obs;
   var totalScore = 0.obs;
-  var secondsRemaining = 6.obs;
+  var secondsRemaining = 10.obs;
   var questionLength = 0.obs;
   var texts = [].obs;
   RxInt? selectedAnswer = 0.obs;
@@ -67,7 +67,7 @@ class QuestionController extends GetxController {
           }
           selectedAnswer = null;
           if (count.value <= questionLength.value - 1) {
-            secondsRemaining.value = 6;
+            secondsRemaining.value = 10;
           } else {
             timerIsActive.value = false;
           }
@@ -98,7 +98,7 @@ class QuestionController extends GetxController {
             selectedAnswer = null;
 
             if (count.value <= questionLength.value - 1) {
-              secondsRemaining.value = 6;
+              secondsRemaining.value = 10;
 
               showNextQuestion();
             } else {
