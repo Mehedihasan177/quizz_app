@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizz_app/features/splash_screen/splash_screen.dart';
 
 import 'core/di/app_component.dart';
 import 'core/routes/router.dart';

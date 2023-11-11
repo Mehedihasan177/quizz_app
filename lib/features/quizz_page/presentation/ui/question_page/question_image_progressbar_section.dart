@@ -1,8 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizz_app/core/utils/core/extensions/extensions.dart';
-
 import '../../../../../core/utils/consts/app_assets.dart';
 import '../../../../../core/utils/consts/app_colors.dart';
 import '../../../../../core/utils/consts/app_sizes.dart';

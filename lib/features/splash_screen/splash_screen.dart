@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../core/routes/route_name.dart';
 import '../../core/routes/router.dart';
 import '../../core/utils/consts/app_assets.dart';
 import '../../core/utils/consts/app_colors.dart';
-import '../quizz_page/presentation/ui/homepage/homepage.dart';
 
 
 class SplashScreen extends StatefulWidget {

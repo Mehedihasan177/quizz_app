@@ -41,7 +41,7 @@ dependencies:
   cached_network_image: ^3.3.0
   logger: ^2.0.2+1
   shared_preferences:
-  double_back_to_close_app: ^2.1.0
+
 
 
 

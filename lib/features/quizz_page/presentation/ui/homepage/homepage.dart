@@ -4,8 +4,6 @@ import 'package:quizz_app/core/utils/consts/app_colors.dart';
 import 'package:quizz_app/core/utils/consts/app_sizes.dart';
 import 'package:quizz_app/core/utils/consts/textstyle.dart';
 import 'package:quizz_app/core/utils/core/extensions/extensions.dart';
-
-
 import '../../../../../core/routes/route_name.dart';
 import '../../../../../core/routes/router.dart';
 import '../../controller/question_controller.dart';
