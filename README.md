@@ -8,11 +8,11 @@ error is:
 ]
 
 # Features:
-Dependency injection using locator
-Clean architecture pattern
-Integration of CachedNetworkImage for image loading
-Count timer
-Using GetX State management
+1. Dependency injection using locator
+2. Clean architecture pattern
+3. Integration of CachedNetworkImage for image loading
+4. Count timer
+5. Using GetX State management
 
 # Dependencies:
 get: ^4.6.6
